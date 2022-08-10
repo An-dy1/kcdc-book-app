@@ -1,11 +1,12 @@
 import './App.css';
-import Book from './Components/Book';
 import BookContainer from './Components/BookContainer';
+import AddBook from './Components/AddBook';
 
 function App() {
   return (
     <div className='App'>
       <h1>Our Book App</h1>
+      <AddBook />
       <BookContainer />
     </div>
   );
