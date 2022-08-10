@@ -25,8 +25,8 @@ const books = [
 export default function BookContainer() {
   return (
     <div style={styles.containerStyle}>
-      {books.map((book) => (
-        <Book title={book.title} url={book.url} />
+      {books.map((book, index) => (
+        <Book key={index} title={book.title} url={book.url} />
       ))}
     </div>
   );
