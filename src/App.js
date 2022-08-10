@@ -1,11 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import Book from './Components/Book';
+import BookContainer from './Components/BookContainer';
 
 function App() {
   return (
-    <div>
-      <Book />
+    <div className='App'>
+      <h1>Our Book App</h1>
+      <p></p>
+      <BookContainer />
     </div>
   );
 }
