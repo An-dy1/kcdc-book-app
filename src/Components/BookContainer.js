@@ -21,7 +21,7 @@ export default function BookContainer() {
 
   useEffect(() => {
     fetchBooks();
-  }, []);
+  });
 
   return (
     <div style={styles.containerStyle}>

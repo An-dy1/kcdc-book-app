@@ -9,13 +9,15 @@ export default function AddBook() {
   const addBook = async () => {
     let title = bookInput;
     let url = bookUrl;
-    await fetch(`${api_base_url}/books`, {
+    let response = await fetch(`${api_base_url}/books`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ title, url }),
     }).then((response) => response.json());
+    console.log(response);
+    return response;
   };
 
   const handleBookInput = (e) => {
@@ -29,6 +31,9 @@ export default function AddBook() {
   const handleBookSubmit = (e) => {
     e.preventDefault();
     addBook();
+    // todo: capture the response returned by this method and handle it differently if it's successful or not
+    setBookInput('');
+    setBookUrl('');
   };
 
   return (
