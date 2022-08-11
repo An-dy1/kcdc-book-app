@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 
+const api_base_url = `http://localhost:5005`;
+
 export default function AddBook() {
   const [bookInput, setBookInput] = useState('');
   const [bookUrl, setBookUrl] = useState('');
 
   const addBook = async () => {
-    let newBook = await fetch(`http://localhost:5005/book`, {
+    let title = bookInput;
+    let url = bookUrl;
+    await fetch(`${api_base_url}/books`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ bookInput, bookUrl }),
+      body: JSON.stringify({ title, url }),
     }).then((response) => response.json());
-    // setBooks(books);
-    console.log(newBook);
   };
 
   const handleBookInput = (e) => {
@@ -26,9 +28,6 @@ export default function AddBook() {
 
   const handleBookSubmit = (e) => {
     e.preventDefault();
-    // search for book
-    console.log(`I will search for ${bookInput} now`);
-    // setBookInput('');
     addBook();
   };
 

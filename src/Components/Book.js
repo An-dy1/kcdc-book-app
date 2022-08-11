@@ -20,7 +20,7 @@ function Book(props) {
   return (
     <div style={styles.divstyles}>
       <label htmlFor='title'>{props.title}</label>
-      <img src={props.url} alt='Temp Book' style={styles.imgStyles} />
+      <img src={props.url} alt={props.title} style={styles.imgStyles} />
     </div>
   );
 }
