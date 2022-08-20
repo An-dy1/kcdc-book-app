@@ -16,7 +16,6 @@ export default function AddBook() {
       },
       body: JSON.stringify({ title, url }),
     }).then((response) => response.json());
-    console.log(response);
     return response;
   };
 
